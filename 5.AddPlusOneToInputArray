@@ -1,0 +1,23 @@
+#question 5
+def plusOne(digits):
+    carry = 1
+    n = len(digits)
+
+    for i in range(n - 1, 0, -1):                                     #i=2                     i=1                i=0
+        digits[i] += carry                                            # 9+1=10                 9+1=10             9+1= 10
+        if digits[i] < 10:                                            #this condition fails for all 3 iteration
+            carry = 0
+            break
+        else:                               #for [9,9,9] case
+            digits[i] = 0
+
+    if carry == 1:                                                                                                               #now this conditon works and returns[1,0,0,0]
+        digits.insert(0, carry)
+
+    return digits
+digits = [1,2,3]
+print(plusOne(digits))
+
+
+#TC - O(n)
+#SC - O(1)
