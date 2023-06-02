@@ -16,3 +16,4 @@ print(result)
 
 #TC - O(nlogn)-----sort
 #SC - O(1)
+
